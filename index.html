@@ -109,9 +109,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#publications">Publications</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
@@ -127,8 +125,9 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Theme Toggle Script -->
     <script>
-        // Theme toggling functionality
         document.addEventListener('DOMContentLoaded', () => {
             const themeToggle = document.getElementById('themeToggle');
             const icon = themeToggle.querySelector('i');
@@ -148,6 +147,55 @@
                 icon.classList.toggle('bi-sun');
             });
         });
+    </script>
+
+    <!-- Typing Effect Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subtitleText = "Building bridges between AI innovation and enterprise solutions";
+            const subtitleElement = document.getElementById('subtitleText');
+            let charIndex = 0;
+
+            function typeSubtitle() {
+                if (charIndex < subtitleText.length) {
+                    subtitleElement.textContent += subtitleText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeSubtitle, 50);
+                }
+            }
+
+            setTimeout(typeSubtitle, 1000);
+        });
+    </script>
+
+    <!-- Intersection Observer for Timeline -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = entry.target.classList.contains('timeline-item:nth-child(odd)') 
+                            ? 'translateX(-3rem)' 
+                            : 'translateX(3rem)';
+                    }
+                });
+            }, observerOptions);
+
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                observer.observe(item);
+            });
+        });
+    </script>
+
     <!-- Publications Section -->
     <section id="publications" class="py-5 bg-light">
         <div class="container py-5">
