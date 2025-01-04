@@ -7,11 +7,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f5f6fa;
+            --bg-color: #0d1117;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --link-color: #58a6ff;
+            --repo-bg: #21262d;
+            --success-color: #238636;
         }
 
         * {
@@ -21,155 +23,230 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
+            color: var(--text-primary);
+            background-color: var(--bg-color);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 2rem;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+        .profile-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
         .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
         .contact-info a {
-            color: white;
+            color: var(--link-color);
             text-decoration: none;
-            display: flex;
+            margin-right: 1.5rem;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .contact-info a:hover {
-            color: var(--accent-color);
+            text-decoration: underline;
         }
 
         .section {
-            background: white;
+            background: var(--repo-bg);
             padding: 2rem;
             margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
 
         .section-title {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .experience-item, .education-item, .project-item, .publication-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-header, .education-header, .project-header, .publication-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-title, .education-degree, .project-title, .publication-title {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .skills-grid {
+        .repo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
         }
 
-        .skill-category {
-            margin-bottom: 1rem;
+        .repo-card {
+            background: var(--repo-bg);
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
 
-        .skill-category h4 {
-            color: var(--secondary-color);
+        .repo-card h3 a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .experience-header, .education-header {
             margin-bottom: 0.5rem;
         }
 
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
+        .experience-title, .education-degree {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
 
-            .experience-header, .education-header {
-                flex-direction: column;
+        .experience-date, .education-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                max-width: 200px;
+                margin: 0 auto;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Muhammad Arya Fikriansyah</h1>
+    <div class="container">
+        <div class="profile-section">
+            <div>
+                <img src="/api/placeholder/300/300" alt="Muhammad Arya Fikriansyah" class="profile-image">
                 <div class="contact-info">
-                    <a href="tel:+6285169922002"><i class="fas fa-phone"></i> +62-851-6992-2002</a>
-                    <a href="mailto:aryafikriansyah@gmail.com"><i class="fas fa-envelope"></i> aryafikriansyah@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/arya-fikriansyah" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/aryafikriii" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="mailto:aryafikriansyah@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://www.linkedin.com/in/arya-fikriansyah"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/aryafikriii"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="profile-info">
+                <h1>Muhammad Arya Fikriansyah</h1>
+                <p>Building the bridge between AI innovation and enterprise solutions | Technical Consultant & AI Researcher<br>.NET • Python • ML/DL • Enterprise Development</p>
+
+                <div class="repositories">
+                    <h2 class="section-title">Popular repositories</h2>
+                    <div class="repo-grid">
+                        <div class="repo-card">
+                            <h3><a href="https://github.com/aryafikriii/ya-hoodie">ya-hoodie</a></h3>
+                            <p>A modern e-commerce website template</p>
+                            <div class="repo-meta">
+                                <span class="tech-tag"><i class="fas fa-circle"></i> CSS</span>
+                                <span><i class="far fa-star"></i> 2</span>
+                            </div>
+                        </div>
+                        
+                        <div class="repo-card">
+                            <h3><a href="https://github.com/aryafikriii/Transfer-Learning-DistilBert">Transfer-Learning-DistilBert</a></h3>
+                            <p>Fine-tuning DistilBERT for text classification</p>
+                            <div class="repo-meta">
+                                <span class="tech-tag"><i class="fas fa-circle"></i> Jupyter Notebook</span>
+                                <span><i class="far fa-star"></i> 1</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <main class="container">
-        <section class="section">
-            <h2 class="section-title">Summary</h2>
-            <p>Recent Informatics graduate (3.94/4.0 GPA) from Telkom University with experience spanning enterprise software development, AI research, and data analytics. Focused on bridging the gap between complex technical capabilities and business needs while delivering innovative, efficient, and data-driven solutions that create measurable impact. Currently contributing as Technical Consultant at Medco E&P Indonesia through Kairos Utama Indonesia, focusing on enterprise software development and digital transformation initiatives.</p>
-        </section>
 
         <section class="section">
             <h2 class="section-title">Experience</h2>
-            
             <div class="experience-item">
                 <div class="experience-header">
                     <div class="experience-title">Technical Consultant</div>
-                    <div>Jun 2024 - Present</div>
+                    <div class="experience-date">Jun 2024 - Present</div>
                 </div>
                 <div>Medco E&P Indonesia - South Jakarta, Indonesia</div>
                 <ul>
-                    <li>Contributed to converting enterprise applications from ASP.NET WebForms VB to ASP.NET MVC 4.8 C#, successfully migrating 13 applications including their WCF services</li>
-                    <li>Developed standardized project templates for BPM applications using ASP.NET MVC 4.8 C# with Kendo UI, WCF services, and Console Applications</li>
-                    <li>Created reusable authentication module as NuGet package supporting LDAP and Azure AD authentication, with MFA integration</li>
-                    <li>Engineered AI-powered PDF processing system using on-premise LLama models and developed Similarity Checker with fuzzy matching algorithms</li>
+                    <li>Contributed to converting enterprise applications from ASP.NET WebForms VB to ASP.NET MVC 4.8 C#</li>
+                    <li>Developed standardized project templates for BPM applications</li>
+                    <li>Created reusable authentication module as NuGet package</li>
+                    <li>Engineered AI-powered PDF processing system using on-premise LLama models</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
                     <div class="experience-title">Research Assistant</div>
-                    <div>Nov 2022 - May 2024</div>
+                    <div class="experience-date">Nov 2022 - May 2024</div>
                 </div>
                 <div>UCF College of Engineering & Computer Science - Orlando, Florida (Remote)</div>
                 <ul>
-                    <li>Collaborated on international research project focused on Cyber Security, Real-time Systems, and Machine Learning</li>
-                    <li>Contributed to developing NAPER, achieving 36.5% faster inference while maintaining 5.6% higher accuracy for DNNs</li>
-                    <li>Contributed to 6 IEEE-indexed research papers and delivered 2 presentations at international conferences</li>
+                    <li>Collaborated on international research project focused on Cyber Security and ML</li>
+                    <li>Contributed to developing NAPER, achieving 36.5% faster inference</li>
+                    <li>Published 6 IEEE-indexed research papers</li>
                 </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Publications</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10652136" style="color: inherit; text-decoration: none;">
+                            Beyond Benchmarks: Assessing Knowledge Graph Completion Methods
+                        </a>
+                    </div>
+                    <div class="experience-date">ICoDSA 2024</div>
+                </div>
+                <div style="color: var(--text-secondary);">DOI: 10.1109/ICoDSA62899.2024.10652136</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <a href="https://ieeexplore.ieee.org/document/10467579" style="color: inherit; text-decoration: none;">
+                            A Deep Dive into Electra: Transfer Learning for Text Classification
+                        </a>
+                    </div>
+                    <div class="experience-date">ISRITI 2023</div>
+                </div>
+                <div style="color: var(--text-secondary);">DOI: 10.1109/ISRITI60336.2023.10467579</div>
             </div>
         </section>
 
@@ -178,53 +255,12 @@
             <div class="education-item">
                 <div class="education-header">
                     <div class="education-degree">Bachelor of Science in Informatics</div>
-                    <div>Sep 2020 - Jan 2024</div>
+                    <div class="education-date">Sep 2020 - Jan 2024</div>
                 </div>
                 <div>Telkom University - Bandung, Indonesia</div>
-                <div>GPA: 3.94 / 4.00</div>
+                <div style="color: var(--text-secondary);">GPA: 3.94 / 4.00</div>
             </div>
         </section>
-
-        <section class="section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <p>Python, C#, VB.NET</p>
-                </div>
-                <div class="skill-category">
-                    <h4>ML/AI Technologies</h4>
-                    <p>PyTorch, TensorFlow, scikit-learn, Deep Learning, Neural Networks</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Data Science</h4>
-                    <p>Pandas, NumPy, Data Analysis, ETL, SQL, Data Visualization</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Development Tools</h4>
-                    <p>Git, Visual Studio, Jupyter Notebooks</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Selected Publications</h2>
-            <div class="publication-item">
-                <div class="publication-header">
-                    <div class="publication-title">Beyond Benchmarks: Assessing Knowledge Graph Completion Methods on Non-Benchmark Employee Data</div>
-                    <div>2024</div>
-                </div>
-                <div>International Conference on Data Science and Its Applications (ICoDSA)</div>
-            </div>
-            
-            <div class="publication-item">
-                <div class="publication-header">
-                    <div class="publication-title">A Deep Dive into Electra: Transfer Learning for Fine-Grained Text Classification on SST-2</div>
-                    <div>2023</div>
-                </div>
-                <div>International Seminar on Research of Information Technology and Intelligent Systems (ISRITI)</div>
-            </div>
-        </section>
-    </main>
+    </div>
 </body>
 </html>
