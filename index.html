@@ -3,264 +3,1072 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Arya Fikriansyah - Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Arya Fikriansyah - Technical Consultant & AI Researcher</title>
+    
+    <!-- React and ReactDOM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel untuk JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom styles -->
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --border-color: #30363d;
-            --link-color: #58a6ff;
-            --repo-bg: #21262d;
-            --success-color: #238636;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .profile-section {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .profile-image {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-        }
-
-        .profile-info h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .contact-info {
-            margin-top: 1rem;
-        }
-
-        .contact-info a {
-            color: var(--link-color);
-            text-decoration: none;
-            margin-right: 1.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .section {
-            background: var(--repo-bg);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .repo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .repo-card {
-            background: var(--repo-bg);
-            padding: 1rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        .repo-card h3 a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .tech-tag {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            margin-right: 0.5rem;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .experience-header, .education-header {
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-title, .education-degree {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .experience-date, .education-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin: 1rem 0;
-            color: var(--text-primary);
-        }
-
-        @media (max-width: 768px) {
-            .profile-section {
-                grid-template-columns: 1fr;
-            }
-            
-            .profile-image {
-                max-width: 200px;
-                margin: 0 auto;
-            }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile-section">
-            <div>
-                <img src="/api/placeholder/300/300" alt="Muhammad Arya Fikriansyah" class="profile-image">
-                <div class="contact-info">
-                    <a href="mailto:aryafikriansyah@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="https://www.linkedin.com/in/arya-fikriansyah"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/aryafikriii"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-            <div class="profile-info">
-                <h1>Muhammad Arya Fikriansyah</h1>
-                <p>Building the bridge between AI innovation and enterprise solutions | Technical Consultant & AI Researcher<br>.NET • Python • ML/DL • Enterprise Development</p>
+    <div id="root"></div>
 
-                <div class="repositories">
-                    <h2 class="section-title">Popular repositories</h2>
-                    <div class="repo-grid">
-                        <div class="repo-card">
-                            <h3><a href="https://github.com/aryafikriii/ya-hoodie">ya-hoodie</a></h3>
-                            <p>A modern e-commerce website template</p>
-                            <div class="repo-meta">
-                                <span class="tech-tag"><i class="fas fa-circle"></i> CSS</span>
-                                <span><i class="far fa-star"></i> 2</span>
+    <script type="text/babel">
+        // Destructure React hooks and Lucide icons
+        const { useState, useEffect, useRef } = React;
+        const { 
+            Sun, Moon, Menu, Github, Linkedin, Mail, Send, Clock, ArrowRight, MapPin,
+            Building2, GraduationCap, Brain, Code, Search, ExternalLink, Copy, Check, Calendar 
+        } = lucide;
+
+        // Layout Component
+        const Layout = ({ children }) => {
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [isDarkMode, setIsDarkMode] = useState(() => {
+                if (typeof window !== 'undefined') {
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+                }
+                return false;
+            });
+
+            const toggleTheme = () => {
+                setIsDarkMode(!isDarkMode);
+                document.documentElement.classList.toggle('dark');
+            };
+
+            const navItems = [
+                { name: 'Home', href: '#' },
+                { name: 'About', href: '#about' },
+                { name: 'Experience', href: '#experience' },
+                { name: 'Projects', href: '#projects' },
+                { name: 'Publications', href: '#publications' },
+                { name: 'Blog', href: '#blog' },
+                { name: 'Contact', href: '#contact' }
+            ];
+
+            useEffect(() => {
+                // Set initial dark mode based on system preference
+                if (isDarkMode) {
+                    document.documentElement.classList.add('dark');
+                }
+            }, []);
+
+            return (
+                <div className={`min-h-screen ${isDarkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+                    <nav className={`fixed top-0 w-full z-50 ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+                        <div className="max-w-7xl mx-auto px-4">
+                            <div className="flex justify-between h-16">
+                                <div className="flex items-center">
+                                    <a href="/" className="text-xl font-bold">Arya Fikriansyah</a>
+                                </div>
+
+                                {/* Desktop Navigation */}
+                                <div className="hidden md:flex items-center space-x-4">
+                                    {navItems.map((item) => (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            className={`px-3 py-2 rounded-md text-sm font-medium ${
+                                                isDarkMode 
+                                                    ? 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                                            }`}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ))}
+                                    <button
+                                        onClick={toggleTheme}
+                                        className={`p-2 rounded-lg ${
+                                            isDarkMode 
+                                                ? 'hover:bg-gray-700' 
+                                                : 'hover:bg-gray-100'
+                                        }`}
+                                        aria-label="Toggle theme"
+                                    >
+                                        {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                                    </button>
+                                </div>
+
+                                {/* Mobile menu button */}
+                                <div className="md:hidden flex items-center">
+                                    <button
+                                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                        className={`p-2 rounded-md ${
+                                            isDarkMode 
+                                                ? 'text-gray-400 hover:bg-gray-700 hover:text-white'
+                                                : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                                        }`}
+                                        aria-label="Toggle menu"
+                                    >
+                                        <Menu size={24} />
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="repo-card">
-                            <h3><a href="https://github.com/aryafikriii/Transfer-Learning-DistilBert">Transfer-Learning-DistilBert</a></h3>
-                            <p>Fine-tuning DistilBERT for text classification</p>
-                            <div class="repo-meta">
-                                <span class="tech-tag"><i class="fas fa-circle"></i> Jupyter Notebook</span>
-                                <span><i class="far fa-star"></i> 1</span>
+
+                        {/* Mobile menu */}
+                        {isMenuOpen && (
+                            <div className="md:hidden">
+                                <div className={`px-2 pt-2 pb-3 space-y-1 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                                    {navItems.map((item) => (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            className={`block px-3 py-2 rounded-md text-base font-medium ${
+                                                isDarkMode
+                                                    ? 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                                            }`}
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ))}
+                                    <button
+                                        onClick={() => {
+                                            toggleTheme();
+                                            setIsMenuOpen(false);
+                                        }}
+                                        className={`w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                                            isDarkMode
+                                                ? 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                                : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                                        }`}
+                                    >
+                                        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </nav>
+                    
+                    {/* Main Content */}
+                    <div className="pt-16">
+                        {children}
+                    </div>
+                </div>
+            );
+        };
+
+        // Typing Effect Component
+        const TypeWriter = ({ text, delay = 100 }) => {
+            const [currentText, setCurrentText] = useState('');
+            const [currentIndex, setCurrentIndex] = useState(0);
+
+            useEffect(() => {
+                if (currentIndex < text.length) {
+                    const timeout = setTimeout(() => {
+                        setCurrentText(prevText => prevText + text[currentIndex]);
+                        setCurrentIndex(prevIndex => prevIndex + 1);
+                    }, delay);
+                    
+                    return () => clearTimeout(timeout);
+                }
+            }, [currentIndex, delay, text]);
+
+            return <span>{currentText}</span>;
+        };
+
+        // Hero Section Component
+        const HeroSection = () => {
+            const [isVisible, setIsVisible] = useState(false);
+
+            useEffect(() => {
+                setIsVisible(true);
+            }, []);
+
+            return (
+                <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+                    {/* Background with gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+                        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                            {/* Text Content */}
+                            <div className={`space-y-6 transform transition-all duration-1000 ${
+                                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                            }`}>
+                                <h1 className="text-4xl md:text-5xl font-bold">
+                                    <TypeWriter text="Hi, I'm Arya Fikriansyah" />
+                                </h1>
+                                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+                                    <TypeWriter 
+                                        text="Building bridges between AI innovation and enterprise solutions" 
+                                        delay={50}
+                                    />
+                                </p>
+                                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Technical Consultant & AI Researcher specializing in web development, 
+                                    enterprise solutions, and machine learning applications.
+                                </p>
+
+                                {/* CTA Buttons */}
+                                <div className="flex flex-wrap gap-4">
+                                    <a
+                                        href="#contact"
+                                        className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 
+                                        transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <Mail size={20} />
+                                        Get in touch
+                                    </a>
+                                    <div className="flex items-center gap-4">
+                                        <a
+                                            href="https://github.com/aryafikriii"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full
+                                            transition-colors duration-300"
+                                        >
+                                            <Github size={24} />
+                                        </a>
+                                        <a
+                                            href="https://www.linkedin.com/in/arya-fikriansyah"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full
+                                            transition-colors duration-300"
+                                        >
+                                            <Linkedin size={24} />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Image/Visual Content */}
+                            <div className={`relative transform transition-all duration-1000 delay-300 ${
+                                isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+                            }`}>
+                                <div className="relative w-full aspect-square rounded-2xl overflow-hidden 
+                                shadow-xl bg-gradient-to-br from-indigo-100 to-white dark:from-gray-800 
+                                dark:to-gray-900">
+                                    <img
+                                        src="/api/placeholder/600/600"
+                                        alt="Arya Fikriansyah"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    {/* Floating badges */}
+                                    <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-4 
+                                    rounded-lg shadow-lg transform rotate-6 float-animation">
+                                        <span className="text-sm font-semibold">Web Development</span>
+                                    </div>
+                                    <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 
+                                    rounded-lg shadow-lg transform -rotate-12 float-animation">
+                                        <span className="text-sm font-semibold">Machine Learning</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            );
+        };
 
-        <section class="section">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Technical Consultant</div>
-                    <div class="experience-date">Jun 2024 - Present</div>
-                </div>
-                <div>Medco E&P Indonesia - South Jakarta, Indonesia</div>
-                <ul>
-                    <li>Contributed to converting enterprise applications from ASP.NET WebForms VB to ASP.NET MVC 4.8 C#</li>
-                    <li>Developed standardized project templates for BPM applications</li>
-                    <li>Created reusable authentication module as NuGet package</li>
-                    <li>Engineered AI-powered PDF processing system using on-premise LLama models</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Research Assistant</div>
-                    <div class="experience-date">Nov 2022 - May 2024</div>
-                </div>
-                <div>UCF College of Engineering & Computer Science - Orlando, Florida (Remote)</div>
-                <ul>
-                    <li>Collaborated on international research project focused on Cyber Security and ML</li>
-                    <li>Contributed to developing NAPER, achieving 36.5% faster inference</li>
-                    <li>Published 6 IEEE-indexed research papers</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Publications</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10652136" style="color: inherit; text-decoration: none;">
-                            Beyond Benchmarks: Assessing Knowledge Graph Completion Methods
-                        </a>
+        // Experience Card Component
+        const ExperienceCard = ({ experience, isEven }) => {
+            const [isHovered, setIsHovered] = useState(false);
+          
+            return (
+                <div 
+                    className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-8
+                    ${isEven ? 'md:text-right' : ''}`}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    {/* Timeline line */}
+                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 
+                    dark:bg-gray-700 transform -translate-x-1/2" />
+                    
+                    {/* Date and company - alternating sides */}
+                    <div className={`md:col-span-1 ${isEven ? 'md:order-2' : ''}`}>
+                        <div className={`flex items-center gap-4 ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">{experience.date}</span>
+                            <div className={`h-8 w-8 rounded-full flex items-center justify-center
+                            ${isHovered ? 'bg-indigo-100 dark:bg-indigo-900' : 'bg-gray-100 dark:bg-gray-800'}
+                            transition-colors duration-300`}>
+                                {experience.icon}
+                            </div>
+                        </div>
+                        <h3 className="text-xl font-semibold mt-2">{experience.company}</h3>
+                        <p className="text-gray-600 dark:text-gray-400">{experience.location}</p>
                     </div>
-                    <div class="experience-date">ICoDSA 2024</div>
-                </div>
-                <div style="color: var(--text-secondary);">DOI: 10.1109/ICoDSA62899.2024.10652136</div>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">
-                        <a href="https://ieeexplore.ieee.org/document/10467579" style="color: inherit; text-decoration: none;">
-                            A Deep Dive into Electra: Transfer Learning for Text Classification
-                        </a>
+                    {/* Role and responsibilities */}
+                    <div className={`md:col-span-1 ${isEven ? 'md:order-1' : ''}`}>
+                        <h4 className="text-lg font-medium text-indigo-600 dark:text-indigo-400">
+                            {experience.role}
+                        </h4>
+                        <ul className={`mt-4 space-y-2 ${isEven ? 'md:text-right' : ''}`}>
+                            {experience.responsibilities.map((item, index) => (
+                                <li 
+                                    key={index}
+                                    className={`flex items-start gap-2 ${isEven ? 'md:flex-row-reverse' : ''}`}
+                                >
+                                    <span className="h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-2 
+                                    flex-shrink-0" />
+                                    <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                    <div class="experience-date">ISRITI 2023</div>
                 </div>
-                <div style="color: var(--text-secondary);">DOI: 10.1109/ISRITI60336.2023.10467579</div>
-            </div>
-        </section>
+            );
+        };
 
-        <section class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-degree">Bachelor of Science in Informatics</div>
-                    <div class="education-date">Sep 2020 - Jan 2024</div>
+        // Experience Section Component
+        const ExperienceSection = () => {
+            const experiences = [
+                {
+                    company: 'Medco E&P Indonesia',
+                    role: 'Technical Consultant',
+                    date: 'Jun 2024 - Present',
+                    location: 'South Jakarta, Indonesia',
+                    icon: <Building2 size={16} />,
+                    responsibilities: [
+                        'Converted enterprise applications from ASP.NET WebForms VB to ASP.NET MVC 4.8 C#',
+                        'Developed standardized project templates using ASP.NET MVC with Kendo UI',
+                        'Created reusable authentication module with LDAP and Azure AD integration',
+                        'Engineered AI-powered PDF processing system using on-premise LLama models',
+                        'Developed automated testing framework benefiting over 20 QA engineers'
+                    ]
+                },
+                {
+                    company: 'UCF College of Engineering',
+                    role: 'Research Assistant',
+                    date: 'Nov 2022 - May 2024',
+                    location: 'Orlando, Florida (Remote)',
+                    icon: <Brain size={16} />,
+                    responsibilities: [
+                        'Collaborated with Prof. Yan Solihin on Cyber Security and Machine Learning research',
+                        'Developed NAPER, achieving 36.5% faster inference while maintaining higher accuracy',
+                        'Analyzed research papers and conducted experimental studies on DNN optimization',
+                        'Contributed to 6 IEEE-indexed research papers and delivered international presentations'
+                    ]
+                },
+                {
+                    company: 'Telkom University',
+                    role: 'Data Collection Analyst',
+                    date: 'Jul 2023 - Aug 2023',
+                    location: 'Bandung, Indonesia',
+                    icon: <GraduationCap size={16} />,
+                    responsibilities: [
+                        'Led alumni data collection project analyzing responses from 5,000 graduates',
+                        'Developed automated data processing scripts achieving 80% response rate',
+                        'Created data visualizations for curriculum and career services improvements'
+                    ]
+                }
+            ];
+
+            return (
+                <section id="experience" className="py-20 bg-white dark:bg-gray-900">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl font-bold">Professional Experience</h2>
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
+                                My journey in tech and research
+                            </p>
+                        </div>
+
+                        <div className="relative">
+                            {experiences.map((exp, index) => (
+                                <ExperienceCard 
+                                    key={index} 
+                                    experience={exp} 
+                                    isEven={index % 2 !== 0}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Project Card Component
+        const ProjectCard = ({ project }) => {
+            const [isHovered, setIsHovered] = useState(false);
+
+            return (
+                <div
+                    className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg
+                    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl
+                    ${isHovered ? 'ring-2 ring-indigo-500' : ''}`}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    {/* Preview Image */}
+                    <div className="relative h-48 bg-gray-100 dark:bg-gray-700">
+                        <img
+                            src="/api/placeholder/400/200"
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                        <div className="flex justify-between items-start mb-4">
+                            <h3 className="text-lg font-semibold">{project.title}</h3>
+                            <div className="flex gap-2">
+                                {project.github && (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
+                                        aria-label="View on GitHub"
+                                    >
+                                        <Github size={20} />
+                                    </a>
+                                )}
+                                {project.demo && (
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
+                                        aria-label="View Demo"
+                                    >
+                                        <ExternalLink size={20} />
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            {project.description}
+                        </p>
+
+                        {/* Technologies */}
+                        <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech, index) => (
+                                <span
+                                    key={index}
+                                    className="px-3 py-1 text-sm rounded-full bg-indigo-100 dark:bg-indigo-900
+                                    text-indigo-600 dark:text-indigo-300"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-                <div>Telkom University - Bandung, Indonesia</div>
-                <div style="color: var(--text-secondary);">GPA: 3.94 / 4.00</div>
+            );
+        };
+
+        // Projects Section Component
+        const ProjectsSection = () => {
+            const [selectedTech, setSelectedTech] = useState('All');
+            const [searchQuery, setSearchQuery] = useState('');
+            const [filteredProjects, setFilteredProjects] = useState([]);
+
+            const projects = [
+                {
+                    title: 'Credit Card Fraud Detection',
+                    description: 'Implemented multiple ML algorithms for fraud detection with comprehensive data preprocessing and visualization dashboard.',
+                    technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'Pandas'],
+                    github: 'https://github.com/aryafikriii/fraud-detection',
+                    demo: null
+                },
+                {
+                    title: 'Electra Fine-tuned SST2',
+                    description: 'Fine-tuned Google\'s Electra model achieving state-of-the-art sentiment analysis performance with GPU acceleration.',
+                    technologies: ['PyTorch', 'Transformers', 'CUDA', 'Python'],
+                    github: 'https://github.com/aryafikriii/electra-sst2',
+                    demo: null
+                },
+                {
+                    title: 'DistilBERT Transfer Learning',
+                    description: 'Implemented selective fine-tuning approach for DistilBERT model, surpassing baseline accuracy for text classification.',
+                    technologies: ['PyTorch', 'Hugging Face', 'Python'],
+                    github: 'https://github.com/aryafikriii/Transfer-Learning-DistilBert',
+                    demo: null
+                }
+            ];
+
+            // Get unique technologies
+            const technologies = ['All', ...new Set(projects.flatMap(p => p.technologies))];
+
+            // Filter projects based on selected technology and search query
+            useEffect(() => {
+                let filtered = projects;
+                
+                if (selectedTech !== 'All') {
+                    filtered = filtered.filter(p => p.technologies.includes(selectedTech));
+                }
+                
+                if (searchQuery) {
+                    const query = searchQuery.toLowerCase();
+                    filtered = filtered.filter(p => 
+                        p.title.toLowerCase().includes(query) ||
+                        p.description.toLowerCase().includes(query) ||
+                        p.technologies.some(t => t.toLowerCase().includes(query))
+                    );
+                }
+                
+                setFilteredProjects(filtered);
+            }, [selectedTech, searchQuery]);
+
+            return (
+                <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold">Featured Projects</h2>
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
+                                A collection of my work in AI/ML and web development
+                            </p>
+                        </div>
+
+                        {/* Filters */}
+                        <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-between">
+                            {/* Technology filter */}
+                            <div className="flex flex-wrap gap-2">
+                                {technologies.map((tech) => (
+                                    <button
+                                        key={tech}
+                                        onClick={() => setSelectedTech(tech)}
+                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
+                                        ${selectedTech === tech
+                                            ? 'bg-indigo-600 text-white'
+                                            : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
+                                        }`}
+                                    >
+                                        {tech}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* Search */}
+                            <div className="relative">
+                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                <input
+                                    type="text"
+                                    placeholder="Search projects..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700
+                                    bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Projects Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {filteredProjects.map((project, index) => (
+                                <ProjectCard key={index} project={project} />
+                            ))}
+                        </div>
+
+                        {filteredProjects.length === 0 && (
+                            <div className="text-center py-12">
+                                <Code size={48} className="mx-auto text-gray-400 mb-4" />
+                                <p className="text-gray-600 dark:text-gray-400">
+                                    No projects found matching your criteria
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                </section>
+            );
+        };
+
+        // Publication Card Component
+        const PublicationCard = ({ publication }) => {
+            const [isCopied, setIsCopied] = useState(false);
+
+            const copyToClipboard = async (text) => {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    setIsCopied(true);
+                    setTimeout(() => setIsCopied(false), 2000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+            };
+
+            const getCitation = () => {
+                return `${publication.authors}. (${publication.year}). ${publication.title}. ${publication.conference}. DOI: ${publication.doi}`;
+            };
+
+            return (
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg 
+                hover:shadow-xl transition-shadow duration-300">
+                    {/* Conference Tag and Year */}
+                    <div className="flex justify-between items-start mb-4">
+                        <span className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 
+                        dark:text-indigo-300 text-sm rounded-full">
+                            {publication.conference_short}
+                        </span>
+                        <div className="flex items-center text-gray-500 dark:text-gray-400">
+                            <Calendar size={16} className="mr-1" />
+                            <span className="text-sm">{publication.year}</span>
+                        </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-semibold mb-3">{publication.title}</h3>
+
+                    {/* Authors */}
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        {publication.authors}
+                    </p>
+
+                    {/* Actions */}
+                    <div className="flex items-center justify-between mt-6">
+                        <div className="flex gap-3">
+                            {publication.doi && (
+                                <a
+                                    href={`https://doi.org/${publication.doi}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 
+                                    hover:text-indigo-700 dark:hover:text-indigo-300"
+                                >
+                                    <ExternalLink size={16} />
+                                    View Paper
+                                </a>
+                            )}
+                            <button
+                                onClick={() => copyToClipboard(getCitation())}
+                                className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 
+                                hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                                {isCopied ? (
+                                    <>
+                                        <Check size={16} />
+                                        Copied!
+                                    </>
+                                ) : (
+                                    <>
+                                        <Copy size={16} />
+                                        Cite
+                                    </>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // Publications Section Component
+        const PublicationsSection = () => {
+            const [filter, setFilter] = useState('all');
+
+            const publications = [
+                {
+                    title: "Beyond Benchmarks: Assessing Knowledge Graph Completion Methods on Non-Benchmark Employee Data",
+                    authors: "Muhammad Arya Fikriansyah, et al.",
+                    year: "2024",
+                    conference: "International Conference on Data Science and Its Applications (ICoDSA)",
+                    conference_short: "ICoDSA",
+                    doi: "10.1109/ICoDSA62899.2024.10652136",
+                    type: "conference"
+                },
+                {
+                    title: "A Deep Dive into Electra: Transfer Learning for Fine-Grained Text Classification on SST-2",
+                    authors: "Muhammad Arya Fikriansyah, et al.",
+                    year: "2023",
+                    conference: "International Seminar on Research of Information Technology and Intelligent Systems (ISRITI)",
+                    conference_short: "ISRITI",
+                    doi: "10.1109/ISRITI60336.2023.10467579",
+                    type: "conference"
+                },
+                {
+                    title: "Comparative Analysis of Transformer Models in Object Detection and Relationship Determination",
+                    authors: "Muhammad Arya Fikriansyah, et al.",
+                    year: "2023",
+                    conference: "JURNAL MEDIA INFORMATIKA BUDIDARMA",
+                    conference_short: "JMIB",
+                    doi: "10.30865/mib.v8i1.7158",
+                    type: "journal"
+                },
+                {
+                    title: "Integrity Protection for Encrypted DNN Inference",
+                    authors: "Muhammad Arya Fikriansyah, et al.",
+                    year: "2023",
+                    conference: "The 10th European Starting AI Researchers' Symposium (STAIRS)",
+                    conference_short: "STAIRS",
+                    doi: null,
+                    type: "conference"
+                }
+            ];
+
+            const filteredPublications = filter === 'all' 
+                ? publications 
+                : publications.filter(pub => pub.type === filter);
+
+            return (
+                <section id="publications" className="py-20 bg-gray-50 dark:bg-gray-900">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        {/* Header */}
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold">Research Publications</h2>
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
+                                My contributions to academic research and literature
+                            </p>
+                        </div>
+
+                        {/* Filters */}
+                        <div className="flex justify-center gap-4 mb-8">
+                            {['all', 'conference', 'journal'].map((type) => (
+                                <button
+                                    key={type}
+                                    onClick={() => setFilter(type)}
+                                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
+                                    ${filter === type
+                                        ? 'bg-indigo-600 text-white'
+                                        : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
+                                    }`}
+                                >
+                                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Publications Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {filteredPublications.map((publication, index) => (
+                                <PublicationCard key={index} publication={publication} />
+                            ))}
+                        </div>
+
+                        {filteredPublications.length === 0 && (
+                            <div className="text-center py-12">
+                                <p className="text-gray-600 dark:text-gray-400">
+                                    No publications found in this category
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                </section>
+            );
+        };
+
+        // Blog Preview Component
+        const BlogPreview = ({ post }) => (
+            <div className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg 
+            hover:shadow-xl transition-all duration-300">
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                    <img
+                        src="/api/placeholder/400/200"
+                        alt={post.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
+                        <div className="flex items-center text-white text-sm">
+                            <Clock size={16} className="mr-2" />
+                            {post.date}
+                        </div>
+                    </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6">
+                    <div className="flex gap-2 mb-3">
+                        {post.tags.map((tag, index) => (
+                            <span key={index} className="px-2 py-1 text-xs rounded-full bg-indigo-100 
+                            dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 group-hover:text-indigo-600 
+                    dark:group-hover:text-indigo-400 transition-colors duration-300">
+                        {post.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        {post.excerpt}
+                    </p>
+                    <a href={post.link} className="inline-flex items-center text-indigo-600 
+                    dark:text-indigo-400 hover:gap-2 transition-all duration-300">
+                        Read More <ArrowRight size={16} className="ml-1" />
+                    </a>
+                </div>
             </div>
-        </section>
-    </div>
+        );
+
+        // Blog Section Component
+        const BlogSection = () => {
+            const blogPosts = [
+                {
+                    title: "Building Scalable Enterprise Applications with .NET",
+                    excerpt: "Best practices and patterns for developing maintainable enterprise applications using .NET Core and C#.",
+                    date: "March 15, 2024",
+                    tags: ["C#", ".NET", "Enterprise"],
+                    link: "#"
+                },
+                {
+                    title: "Deep Learning Model Optimization Techniques",
+                    excerpt: "Practical approaches to optimize deep learning models for better performance and efficiency.",
+                    date: "March 1, 2024",
+                    tags: ["AI", "Deep Learning", "Python"],
+                    link: "#"
+                },
+                {
+                    title: "Modern Web Development with React",
+                    excerpt: "A comprehensive guide to building modern web applications using React and related technologies.",
+                    date: "February 15, 2024",
+                    tags: ["React", "Web Dev", "JavaScript"],
+                    link: "#"
+                }
+            ];
+
+            return (
+                <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-900">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold">Technical Blog</h2>
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
+                                Insights and tutorials on web development, AI, and enterprise solutions
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {blogPosts.map((post, index) => (
+                                <BlogPreview key={index} post={post} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Contact Section Component
+        const ContactSection = () => {
+            const [formState, setFormState] = useState({
+                name: '',
+                email: '',
+                message: ''
+            });
+            const [status, setStatus] = useState(null);
+
+            const handleSubmit = async (e) => {
+                e.preventDefault();
+                setStatus('sending');
+
+                // Simulate form submission
+                setTimeout(() => {
+                    setStatus('success');
+                    setFormState({ name: '', email: '', message: '' });
+                    setTimeout(() => setStatus(null), 3000);
+                }, 1000);
+            };
+
+            return (
+                <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold">Get in Touch</h2>
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
+                                Have a question or want to work together?
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                            {/* Contact Information */}
+                            <div className="space-y-8">
+                                <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-4">
+                                        <Mail className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                                        <div>
+                                            <h4 className="font-medium">Email</h4>
+                                            <a href="mailto:aryafikriansyah@gmail.com" 
+                                            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 
+                                            dark:hover:text-indigo-400">
+                                                aryafikriansyah@gmail.com
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-4">
+                                        <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                                        <div>
+                                            <h4 className="font-medium">Location</h4>
+                                            <p className="text-gray-600 dark:text-gray-400">Jakarta, Indonesia</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-4">
+                                        <Linkedin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                                        <div>
+                                            <h4 className="font-medium">LinkedIn</h4>
+                                            <a href="https://www.linkedin.com/in/arya-fikriansyah" 
+                                            target="_blank" rel="noopener noreferrer" 
+                                            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 
+                                            dark:hover:text-indigo-400">
+                                                linkedin.com/in/arya-fikriansyah
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Contact Form */}
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                                        Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        value={formState.name}
+                                        onChange={(e) => setFormState({...formState, name: e.target.value})}
+                                        required
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-300 
+                                        dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 
+                                        focus:ring-indigo-500 outline-none transition-all duration-300"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                                        Email
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        value={formState.email}
+                                        onChange={(e) => setFormState({...formState, email: e.target.value})}
+                                        required
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-300 
+                                        dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 
+                                        focus:ring-indigo-500 outline-none transition-all duration-300"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                                        Message
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        value={formState.message}
+                                        onChange={(e) => setFormState({...formState, message: e.target.value})}
+                                        required
+                                        rows={4}
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-300 
+                                        dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 
+                                        focus:ring-indigo-500 outline-none transition-all duration-300"
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    disabled={status === 'sending'}
+                                    className={`w-full flex items-center justify-center gap-2 px-6 py-3 
+                                    rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 
+                                    focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 
+                                    transition-colors duration-300 ${status === 'sending' ? 'opacity-50' : ''}`}
+                                >
+                                    {status === 'sending' ? (
+                                        <>Sending...</>
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <Send size={18} />
+                                        </>
+                                    )}
+                                </button>
+                            </form>
+                        </div>
+
+                        {/* Success Message */}
+                        {status === 'success' && (
+                            <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/30 text-green-700 
+                            dark:text-green-300 rounded-lg">
+                                Thank you for your message! I'll get back to you soon.
+                            </div>
+                        )}
+                    </div>
+                </section>
+            );
+        };
+
+        // Combined Blog and Contact Section
+        const BlogAndContact = () => {
+            return (
+                <>
+                    <BlogSection />
+                    <ContactSection />
+                </>
+            );
+        };
+
+        // Main App
+        const App = () => {
+            // Check system dark mode preference
+            useEffect(() => {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                }
+            }, []);
+
+            return (
+                <Layout>
+                    <main className="overflow-x-hidden">
+                        <HeroSection />
+                        <ExperienceSection />
+                        <ProjectsSection />
+                        <PublicationsSection />
+                        <BlogAndContact />
+                    </main>
+                </Layout>
+            );
+        };
+
+        // Mount the application
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        );
+    </script>
 </body>
 </html>
