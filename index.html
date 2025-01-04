@@ -444,5 +444,295 @@
             setTimeout(typeSubtitle, 1000);
         });
     </script>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-white">
+        <div class="container py-5">
+            <!-- Section Header -->
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Featured Projects</h2>
+                <p class="lead text-secondary">A collection of my work in AI/ML and web development</p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="row g-4 mb-5">
+                <!-- Technology Filter -->
+                <div class="col-md-8">
+                    <div class="btn-group flex-wrap" role="group" id="techFilters">
+                        <input type="radio" class="btn-check" name="techFilter" id="all" value="All" checked>
+                        <label class="btn btn-outline-primary" for="all">All</label>
+
+                        <input type="radio" class="btn-check" name="techFilter" id="python" value="Python">
+                        <label class="btn btn-outline-primary" for="python">Python</label>
+
+                        <input type="radio" class="btn-check" name="techFilter" id="pytorch" value="PyTorch">
+                        <label class="btn btn-outline-primary" for="pytorch">PyTorch</label>
+
+                        <input type="radio" class="btn-check" name="techFilter" id="tensorflow" value="TensorFlow">
+                        <label class="btn btn-outline-primary" for="tensorflow">TensorFlow</label>
+
+                        <input type="radio" class="btn-check" name="techFilter" id="ml" value="Machine Learning">
+                        <label class="btn btn-outline-primary" for="ml">Machine Learning</label>
+                    </div>
+                </div>
+                <!-- Search -->
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" class="form-control" id="projectSearch" 
+                               placeholder="Search projects...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row g-4" id="projectsGrid">
+                <!-- Credit Card Fraud Detection -->
+                <div class="col-md-6 col-lg-4 project-item" 
+                     data-technologies="Python,Scikit-learn,TensorFlow,Pandas">
+                    <div class="card h-100 project-card">
+                        <div class="project-image ratio ratio-16x9">
+                            <img src="https://placehold.co/800x600" 
+                                 class="card-img-top object-fit-cover" 
+                                 alt="Credit Card Fraud Detection">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0">Credit Card Fraud Detection</h5>
+                                <div class="project-links">
+                                    <a href="https://github.com/aryafikriii/fraud-detection" 
+                                       class="text-dark ms-2" target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="card-text">Implemented multiple ML algorithms for fraud detection with comprehensive data preprocessing and visualization dashboard.</p>
+                            <div class="project-techs">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-primary">Scikit-learn</span>
+                                <span class="badge bg-primary">TensorFlow</span>
+                                <span class="badge bg-primary">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electra Fine-tuned SST2 -->
+                <div class="col-md-6 col-lg-4 project-item" 
+                     data-technologies="PyTorch,Transformers,CUDA,Python">
+                    <div class="card h-100 project-card">
+                        <div class="project-image ratio ratio-16x9">
+                            <img src="https://placehold.co/800x600" 
+                                 class="card-img-top object-fit-cover" 
+                                 alt="Electra Fine-tuned SST2">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0">Electra Fine-tuned SST2</h5>
+                                <div class="project-links">
+                                    <a href="https://github.com/aryafikriii/electra-sst2" 
+                                       class="text-dark ms-2" target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="card-text">Fine-tuned Google's Electra model achieving state-of-the-art sentiment analysis performance with GPU acceleration.</p>
+                            <div class="project-techs">
+                                <span class="badge bg-primary">PyTorch</span>
+                                <span class="badge bg-primary">Transformers</span>
+                                <span class="badge bg-primary">CUDA</span>
+                                <span class="badge bg-primary">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DistilBERT Transfer Learning -->
+                <div class="col-md-6 col-lg-4 project-item" 
+                     data-technologies="PyTorch,Hugging Face,Python">
+                    <div class="card h-100 project-card">
+                        <div class="project-image ratio ratio-16x9">
+                            <img src="https://placehold.co/800x600" 
+                                 class="card-img-top object-fit-cover" 
+                                 alt="DistilBERT Transfer Learning">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0">DistilBERT Transfer Learning</h5>
+                                <div class="project-links">
+                                    <a href="https://github.com/aryafikriii/Transfer-Learning-DistilBert" 
+                                       class="text-dark ms-2" target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="card-text">Implemented selective fine-tuning approach for DistilBERT model, surpassing baseline accuracy for text classification.</p>
+                            <div class="project-techs">
+                                <span class="badge bg-primary">PyTorch</span>
+                                <span class="badge bg-primary">Hugging Face</span>
+                                <span class="badge bg-primary">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="text-center py-5 d-none">
+                <i class="bi bi-code-slash display-1 text-secondary mb-3"></i>
+                <p class="text-secondary">No projects found matching your criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Project card styles */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+        }
+
+        .project-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .project-image img {
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-techs .badge {
+            font-weight: 500;
+            padding: 0.5em 1em;
+        }
+
+        .project-links a {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-links a:hover {
+            opacity: 1;
+        }
+
+        /* Filter button styles */
+        .btn-outline-primary {
+            border-radius: 50rem;
+            margin: 0.25rem;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Dark mode adjustments for projects section */
+        [data-bs-theme="dark"] {
+            .project-links a {
+                color: var(--bs-light) !important;
+            }
+
+            .input-group-text {
+                background-color: var(--bs-dark) !important;
+                border-color: var(--bs-gray-700);
+            }
+
+            .form-control {
+                background-color: var(--bs-dark);
+                border-color: var(--bs-gray-700);
+                color: var(--bs-light);
+            }
+
+            .form-control::placeholder {
+                color: var(--bs-gray-500);
+            }
+
+            .bg-white {
+                background-color: var(--bs-dark) !important;
+            }
+        }
+    </style>
+
+    <script>
+        // Projects filtering logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectItems = document.querySelectorAll('.project-item');
+            const searchInput = document.getElementById('projectSearch');
+            const techFilters = document.getElementById('techFilters');
+            const noResults = document.getElementById('noResults');
+
+            function filterProjects() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedTech = document.querySelector('input[name="techFilter"]:checked').value;
+                let visibleCount = 0;
+
+                projectItems.forEach(item => {
+                    const technologies = item.dataset.technologies.split(',');
+                    const title = item.querySelector('.card-title').textContent.toLowerCase();
+                    const description = item.querySelector('.card-text').textContent.toLowerCase();
+
+                    const matchesTech = selectedTech === 'All' || technologies.includes(selectedTech);
+                    const matchesSearch = title.includes(searchTerm) || 
+                                       description.includes(searchTerm) ||
+                                       technologies.some(tech => tech.toLowerCase().includes(searchTerm));
+
+                    if (matchesTech && matchesSearch) {
+                        item.classList.remove('d-none');
+                        visibleCount++;
+                    } else {
+                        item.classList.add('d-none');
+                    }
+                });
+
+                noResults.classList.toggle('d-none', visibleCount > 0);
+            }
+
+            // Event listeners for filters
+            searchInput.addEventListener('input', filterProjects);
+            techFilters.addEventListener('change', filterProjects);
+
+            // Initialize Intersection Observer for animation
+            const projectObserverOptions = {
+                threshold: 0.1,
+                rootMargin: '50px'
+            };
+
+            const projectObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        projectObserver.unobserve(entry.target);
+                    }
+                });
+            }, projectObserverOptions);
+
+            projectItems.forEach(item => {
+                projectObserver.observe(item);
+            });
+        });
+    </script>
 </body>
 </html>
