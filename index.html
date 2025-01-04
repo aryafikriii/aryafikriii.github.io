@@ -156,14 +156,21 @@
             const subtitleElement = document.getElementById('subtitleText');
             let charIndex = 0;
 
+            // Clear any existing content
+            subtitleElement.textContent = '';
+
             function typeSubtitle() {
                 if (charIndex < subtitleText.length) {
-                    subtitleElement.textContent += subtitleText.charAt(charIndex);
+                    // Ensure we're adding one character at a time
+                    const currentText = subtitleElement.textContent;
+                    const nextChar = subtitleText.charAt(charIndex);
+                    subtitleElement.textContent = currentText + nextChar;
                     charIndex++;
                     setTimeout(typeSubtitle, 50);
                 }
             }
 
+            // Start typing effect after a short delay
             setTimeout(typeSubtitle, 1000);
         });
     </script>
