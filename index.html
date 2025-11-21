@@ -1314,7 +1314,7 @@
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4">
-                            <form id="contactForm" action="https://formspree.io/f/xqajzekq" method="POST">
+                            <form id="contactForm" action="https://formspree.io/f/xqajzekq" method="POST" novalidate>
                                 <!-- Honeypot field for spam protection -->
                                 <input type="text" name="_gotcha" style="display:none">
                                 <div class="row g-3">
@@ -1423,20 +1423,6 @@
             }
         }
     </style>
-
-    <!-- Success Toast -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="submitToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header bg-success text-white">
-                <i class="bi bi-check-circle me-2"></i>
-                <strong class="me-auto">Success</strong>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Thank you for your message! I'll get back to you soon.
-            </div>
-        </div>
-    </div>
 
     <script>
         // AJAX form submission for Formspree with validation
