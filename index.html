@@ -1424,13 +1424,34 @@
         }
     </style>
 
+    <!-- Success Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="submitToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="bi bi-check-circle me-2"></i>
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Thank you for your message! I'll get back to you soon.
+            </div>
+        </div>
+    </div>
+
     <script>
-        // AJAX form submission for Formspree
+        // AJAX form submission for Formspree with validation
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contactForm');
+            const toast = new bootstrap.Toast(document.getElementById('submitToast'));
 
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
+
+                if (!form.checkValidity()) {
+                    e.stopPropagation();
+                    form.classList.add('was-validated');
+                    return;
+                }
 
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
@@ -1446,7 +1467,8 @@
 
                     if (response.ok) {
                         form.reset();
-                        alert('Thank you! Your message has been sent.');
+                        form.classList.remove('was-validated');
+                        toast.show();
                     } else {
                         alert('Oops! There was a problem sending your message.');
                     }
