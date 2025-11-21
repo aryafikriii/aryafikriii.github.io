@@ -1314,32 +1314,32 @@
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4">
-                            <form id="contactForm" class="needs-validation" novalidate>
+                            <form id="contactForm" action="https://formspree.io/f/xqajzekq" method="POST">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" required>
+                                        <input type="text" class="form-control" id="name" name="name" required>
                                         <div class="invalid-feedback">
                                             Please enter your name.
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" required>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                         <div class="invalid-feedback">
                                             Please enter a valid email address.
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="subject" class="form-label">Subject</label>
-                                        <input type="text" class="form-control" id="subject" required>
+                                        <input type="text" class="form-control" id="subject" name="subject" required>
                                         <div class="invalid-feedback">
                                             Please enter a subject.
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="message" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                                         <div class="invalid-feedback">
                                             Please enter your message.
                                         </div>
@@ -1422,37 +1422,6 @@
         }
     </style>
 
-    <script>
-        // Form validation and submission
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contactForm');
-            const toast = new bootstrap.Toast(document.getElementById('submitToast'));
-
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                
-                if (!form.checkValidity()) {
-                    event.stopPropagation();
-                    form.classList.add('was-validated');
-                    return;
-                }
-
-                // Simulate form submission
-                const submitButton = form.querySelector('button[type="submit"]');
-                const originalText = submitButton.innerHTML;
-                submitButton.disabled = true;
-                submitButton.innerHTML = '<span class="d-flex align-items-center"><span>Sending...</span><div class="spinner-border spinner-border-sm ms-2"></div></span>';
-
-                setTimeout(() => {
-                    form.reset();
-                    form.classList.remove('was-validated');
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalText;
-                    toast.show();
-                }, 1500);
-            });
-        });
-    </script>
 
     <!-- Footer -->
     <footer class="py-4 bg-dark text-center text-white">
