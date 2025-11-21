@@ -1315,6 +1315,8 @@
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4">
                             <form id="contactForm" action="https://formspree.io/f/xqajzekq" method="POST">
+                                <!-- Honeypot field for spam protection -->
+                                <input type="text" name="_gotcha" style="display:none">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">Name</label>
