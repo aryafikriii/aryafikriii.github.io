@@ -1,48 +1,168 @@
-### 👋 Hi there, I'm Muhammad Arya Fikriansyah!
+# Arya Fikriansyah - Personal Portfolio
 
-![](https://komarev.com/ghpvc/?username=aryafikriii&color=58a6ff)
+Modern personal portfolio website showcasing professional experience, projects, and publications.
 
-Recent Informatics graduate focusing on AI/ML and enterprise software development. Currently contributing as Technical Consultant at Medco E&P Indonesia, specializing in application modernization and AI integration.
+🌐 **Live Site**: [aryafikriii.github.io](https://aryafikriii.github.io)
 
-<h3>🛠️ Technologies & Tools I Work With:</h3>
-<p>
-  <img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img alt="C#" src="https://img.shields.io/badge/-C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" />
-  <img alt="PyTorch" src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img alt="TensorFlow" src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
-  <img alt="SQL" src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
-  <img alt="Git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
-  <img alt=".NET" src="https://img.shields.io/badge/-.NET-512BD4?style=flat-square&logo=.net&logoColor=white" />
-  <img alt="Visual Studio" src="https://img.shields.io/badge/-Visual_Studio-5C2D91?style=flat-square&logo=visual-studio&logoColor=white" />
-  <img alt="Jupyter" src="https://img.shields.io/badge/-Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" />
-  <img alt="scikit-learn" src="https://img.shields.io/badge/-Scikit_Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
-  <img alt="Azure" src="https://img.shields.io/badge/-Azure-0089D6?style=flat-square&logo=microsoft-azure&logoColor=white" />
-  <img alt="Docker" src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />
-</p>
+---
 
-<h3>🎓 Latest Publications</h3>
-<ul>
-  <li><a href="#"><i>Beyond Benchmarks: Assessing Knowledge Graph Completion Methods on Non-Benchmark Employee Data (ICoDSA 2024)</i></a></li>
-  <li><a href="#"><i>A Deep Dive into Electra: Transfer Learning for Fine-Grained Text Classification on SST-2 (ISRITI 2023)</i></a></li>
-  <li><a href="#"><i>Integrity Protection for Encrypted DNN Inference (STAIRS 2023)</i></a></li>
-</ul>
+## 🚀 Tech Stack
 
-<h3>📈 My GitHub Stats</h3>
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: GitHub Pages (Static Export)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=aryafikriii&hide_border=true&show_icons=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9)
+---
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=aryafikriii&theme=github-dark-blue&hide_border=true)](https://git.io/streak-stats)
+## ✨ Features
 
-### 🌟 Featured Projects
-- [Transfer-Learning-DistilBert](https://github.com/aryafikriii/Transfer-Learning-DistilBert) - Fine-tuning DistilBERT for text classification tasks
-- [ya-hoodie](https://github.com/aryafikriii/ya-hoodie) - Modern e-commerce website template
+- 🎨 Modern design with bold animations
+- 🌓 Dark/Light mode toggle
+- 📱 Fully responsive (mobile-first)
+- ⚡ Static site generation (fast loading)
+- 📧 Contact form integration
+- 🎯 SEO optimized
+- ♿ Accessibility friendly
 
-### 🔭 Currently Working On
-- Enterprise application modernization at Medco E&P
-- Research in DNN optimization and security
-- Implementing AI/ML solutions in enterprise environments
+---
 
-### 📫 How to reach me:
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/aryafikriii/aryafikriii.github.io.git
+cd aryafikriii.github.io
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+# Output: /out directory (static files ready for deployment)
+```
+
+---
+
+## 📦 Deployment
+
+### GitHub Pages Setup
+
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to gh-pages branch**:
+   ```bash
+   cd out
+   git init
+   git add -A
+   git commit -m "Deploy portfolio"
+   git branch -M gh-pages
+   git remote add origin https://github.com/aryafikriii/aryafikriii.github.io.git
+   git push -f origin gh-pages
+   ```
+
+3. **Configure GitHub Pages**:
+   - Repository Settings → Pages
+   - Source: Deploy from branch
+   - Branch: `gh-pages` / root
+   - Save
+
+Site will be live at: **https://aryafikriii.github.io**
+
+---
+
+## 📂 Project Structure
+
+```
+aryafikriii.github.io/
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Home page composition
+│   ├── globals.css         # Global styles and theme
+│   └── icon.svg            # Favicon
+├── components/
+│   ├── Navigation.tsx      # Header with theme toggle
+│   ├── Hero.tsx           # Landing section
+│   ├── About.tsx          # Professional summary
+│   ├── Experience.tsx     # Work history
+│   ├── Projects.tsx       # Featured projects
+│   ├── Publications.tsx   # Research papers
+│   ├── TechStack.tsx      # Technologies
+│   ├── Education.tsx      # Academic background
+│   ├── Contact.tsx        # Contact form
+│   ├── Footer.tsx         # Footer
+│   └── ui/
+│       ├── SectionHeader.tsx
+│       └── ThemeProvider.tsx
+├── lib/
+│   └── utils.ts           # Utility functions
+└── public/
+    ├── Profile.pdf        # CV download
+    ├── profile.jpg        # Profile photo
+    └── logos/            # Company logos
+```
+
+---
+
+## 🎨 Customization
+
+### Theme Colors
+
+Edit `app/globals.css` to customize the color scheme:
+
+```css
+@theme {
+  --color-primary: #2563eb;        /* Blue */
+  --color-secondary: #7c3aed;      /* Purple */
+  --color-accent: #10b981;         /* Green */
+}
+```
+
+### Content
+
+Update personal information in:
+- `components/Hero.tsx` - Name, tagline, bio
+- `components/Experience.tsx` - Work history
+- `components/Projects.tsx` - Project showcase
+- `components/Publications.tsx` - Research papers
+- `components/TechStack.tsx` - Technologies
+- `components/Education.tsx` - Academic background
+
+---
+
+## 📄 License
+
+MIT License - Free to use for personal portfolios
+
+---
+
+## 👨‍💻 Author
+
+**Arya Fikriansyah**
+
+- LinkedIn: [linkedin.com/in/arya-fikriansyah](https://www.linkedin.com/in/arya-fikriansyah)
+- GitHub: [github.com/aryafikriii](https://github.com/aryafikriii)
 - Email: aryafikriansyah@gmail.com
-- LinkedIn: [arya-fikriansyah](https://www.linkedin.com/in/arya-fikriansyah)
-- GitHub: [aryafikriii](https://github.com/aryafikriii)
+
+---
+
+Built with ❤️ using Next.js & TypeScript
