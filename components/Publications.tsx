@@ -23,7 +23,7 @@ const publications: Publication[] = [
   },
   {
     title: "Beyond Benchmarks: Assessing Knowledge Graph Completion Methods on Non-Benchmark Employee Data",
-    authors: "M.A. Fikriansyah, et al.",
+    authors: "M. Habiburahman, K. Wiharja, M.A. Fikriansyah",
     venue: "IEEE ICoDSA 2024",
     year: "2024",
     link: "https://doi.org/10.1109/ICoDSA62899.2024.10652136",
@@ -31,28 +31,35 @@ const publications: Publication[] = [
   },
   {
     title: "Public Transportation Ontology-Based Question Answering System in Bandung City using Naïve Bayes via Telegram Bot",
-    authors: "M.A. Fikriansyah, et al.",
+    authors: "R. Amalina, Shaufiah, I. Sardi, M.A. Fikriansyah",
     venue: "IEEE ICoDSA 2024",
     year: "2024",
     link: "https://ieeexplore.ieee.org/abstract/document/10652020",
   },
   {
+    title: "Waiting Period Prediction of Telkom University Student Alumni Using K-Nearest Neighbor and Naïve Bayes",
+    authors: "N. Khairunissa, P.H. Gunawan, A. Rohmawati, M.A. Fikriansyah",
+    venue: "IEEE ICoDSA 2024",
+    year: "2024",
+    link: "https://doi.org/10.1109/ICoDSA62899.2024.10652228",
+  },
+  {
     title: "A Deep Dive into Electra: Transfer Learning for Fine-Grained Text Classification on SST-2",
-    authors: "M.A. Fikriansyah, et al.",
+    authors: "M.A. Fikriansyah, H.H. Nuha, M.H. Santriaji",
     venue: "IEEE ISRITI 2023",
     year: "2023",
     link: "https://doi.org/10.1109/ISRITI60336.2023.10467579",
   },
   {
     title: "Comparative Analysis of Transformer Models in Object Detection and Relationship Determination on COCO Dataset",
-    authors: "M.A. Fikriansyah, et al.",
+    authors: "R.A. Hafizh, K.R.S. Wiharja, M.A. Fikriansyah",
     venue: "JURNAL MEDIA INFORMATIKA BUDIDARMA 2023",
     year: "2023",
     link: "https://doi.org/10.30865/mib.v8i1.7158",
   },
   {
-    title: "Integrity Protection for Encrypted DNN Inference",
-    authors: "M.A. Fikriansyah, et al.",
+    title: "Work in Progress: Integrity Protection for Encrypted DNN Inference",
+    authors: "M.H. Santriaji, G. Algary, M.A. Fikriansyah, R.A. Rajagede, A. Yudha, K. Thomas, D. Mohaisen, Y. Solihin",
     venue: "STAIRS 2023",
     year: "2023",
     link: "https://ecai2023.eu/conf-data/ecai2023/files/STAIRS/stairs2023_09.pdf",
@@ -76,7 +83,7 @@ export default function Publications() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full mb-6" />
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            6 IEEE-indexed research papers advancing Deep Neural Networks optimization, Knowledge Graphs, and AI/ML applications
+            7 IEEE-indexed research papers advancing Deep Neural Networks optimization, Knowledge Graphs, and AI/ML applications
           </p>
         </motion.div>
 
@@ -155,7 +162,7 @@ export default function Publications() {
           className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           <div className="text-center p-6 card-gradient rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
-            <div className="text-4xl font-bold gradient-text mb-2">6</div>
+            <div className="text-4xl font-bold gradient-text mb-2">7</div>
             <div className="text-gray-600 dark:text-gray-400">Total Publications</div>
           </div>
           <div className="text-center p-6 card-gradient rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">

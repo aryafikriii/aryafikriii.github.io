@@ -32,35 +32,39 @@ const categories: { name: Category; icon: any }[] = [
 const techStack: Tech[] = [
   // Backend
   { name: "C#", category: "Backend", icon: "csharp", color: "from-purple-500 to-purple-700" },
-  { name: ".NET Core", category: "Backend", icon: "dotnet", color: "from-indigo-500 to-indigo-700" },
-  { name: "ASP.NET", category: "Backend", icon: "dotnet", color: "from-blue-500 to-blue-700" },
+  { name: ".NET 8", category: "Backend", icon: "dotnet", color: "from-indigo-500 to-indigo-700" },
+  { name: "ASP.NET Core", category: "Backend", icon: "dotnet", color: "from-blue-500 to-blue-700" },
   { name: "Python", category: "Backend", icon: "python", color: "from-blue-400 to-yellow-500" },
-  { name: "Entity Framework", category: "Backend", icon: "dotnet", color: "from-violet-500 to-violet-700" },
+  { name: "EF Core", category: "Backend", icon: "dotnet", color: "from-violet-500 to-violet-700" },
+  { name: "WCF/CoreWCF", category: "Backend", icon: "dotnet", color: "from-teal-500 to-teal-700" },
 
   // Frontend
+  { name: "Kendo UI", category: "Frontend", icon: "kendo", color: "from-green-500 to-green-700" },
+  { name: "JavaScript", category: "Frontend", icon: "javascript", color: "from-yellow-400 to-yellow-600" },
+  { name: "jQuery", category: "Frontend", icon: "jquery", color: "from-blue-500 to-blue-700" },
   { name: "React", category: "Frontend", icon: "react", color: "from-cyan-400 to-cyan-600" },
   { name: "Next.js", category: "Frontend", icon: "nextjs", color: "from-gray-700 to-gray-900" },
   { name: "TypeScript", category: "Frontend", icon: "typescript", color: "from-blue-500 to-blue-700" },
-  { name: "JavaScript", category: "Frontend", icon: "javascript", color: "from-yellow-400 to-yellow-600" },
 
   // Database
   { name: "SQL Server", category: "Database", icon: "mssql", color: "from-red-500 to-red-700" },
   { name: "MySQL", category: "Database", icon: "mysql", color: "from-blue-400 to-blue-600" },
-  { name: "PostgreSQL", category: "Database", icon: "postgresql", color: "from-blue-600 to-blue-800" },
 
   // Cloud & DevOps
-  { name: "Azure", category: "Cloud & DevOps", icon: "azure", color: "from-blue-500 to-blue-700" },
+  { name: "Azure DevOps", category: "Cloud & DevOps", icon: "azure", color: "from-blue-500 to-blue-700" },
   { name: "Docker", category: "Cloud & DevOps", icon: "docker", color: "from-blue-400 to-cyan-500" },
+  { name: "SonarQube", category: "Cloud & DevOps", icon: "sonar", color: "from-cyan-500 to-blue-600" },
   { name: "Git", category: "Cloud & DevOps", icon: "git", color: "from-orange-500 to-red-600" },
-  { name: "GitHub", category: "Cloud & DevOps", icon: "github", color: "from-gray-700 to-gray-900" },
+  { name: "K2 Platform", category: "Cloud & DevOps", icon: "k2", color: "from-red-500 to-orange-500" },
   { name: "Selenium", category: "Cloud & DevOps", icon: "selenium", color: "from-green-500 to-green-700" },
 
   // AI/ML
+  { name: "Azure AI Foundry", category: "AI/ML", icon: "azure", color: "from-blue-500 to-purple-600" },
+  { name: "OpenAI API", category: "AI/ML", icon: "openai", color: "from-green-400 to-cyan-500" },
+  { name: "Mistral AI", category: "AI/ML", icon: "mistral", color: "from-orange-500 to-yellow-500" },
   { name: "PyTorch", category: "AI/ML", icon: "pytorch", color: "from-orange-500 to-red-600" },
   { name: "TensorFlow", category: "AI/ML", icon: "tensorflow", color: "from-orange-400 to-orange-600" },
   { name: "OpenCV", category: "AI/ML", icon: "opencv", color: "from-green-500 to-blue-500" },
-  { name: "scikit-learn", category: "AI/ML", icon: "sklearn", color: "from-orange-400 to-blue-500" },
-  { name: "OpenAI", category: "AI/ML", icon: "openai", color: "from-green-400 to-cyan-500" },
 ];
 
 export default function TechStack() {

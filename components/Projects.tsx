@@ -17,33 +17,31 @@ interface Project {
 const projects: Project[] = [
   {
     id: "bpm-modernization",
-    title: "BPM Template Modernization",
+    title: "BPM Template 2026 (.NET 8)",
     description:
-      "Enterprise-scale migration from .NET Framework 4.8 to .NET 8 LTS for Linux containerization",
+      "Organization-wide .NET 8 project template with EF Core 9, multi-provider SSO, and shared libraries adopted by entire dev team",
     features: [
-      "Migration to ASP.NET Core 8 LTS with Docker containerization",
-      "Architecture modernization with dependency injection and async/await patterns",
-      "Configuration migration from XML to JSON",
-      "Performance optimization for containerized environments",
+      "ASP.NET Core 8 with EF Core 9, Telerik/Kendo UI, and Docker containerization",
+      "Multi-provider SSO: Azure AD OAuth 2.0 + LDAP + Google Authenticator MFA",
+      "Shared configuration library bridging legacy .NET 4.8 with modern .NET 8 DI",
+      "Reusable MVC infrastructure library with K2 workflow integration",
     ],
-    tech: ["ASP.NET Core 8", "C#", "Docker", "Linux Containers", "Entity Framework Core"],
+    tech: ["ASP.NET Core 8", "C#", "EF Core 9", "Docker", "CoreWCF", "K2"],
     gradient: "from-blue-500 to-cyan-500",
-    // NO github URL - enterprise/private project
   },
   {
-    id: "ai-document-catalog",
-    title: "AI-Powered Document Catalog System",
+    id: "ai-foundry-ocr",
+    title: "Azure AI Foundry OCR Pipeline",
     description:
-      "Intelligent metadata extraction using OpenAI Vision API",
+      "Hybrid document intelligence pipeline with multi-model routing and automatic fallback",
     features: [
-      "Extracts metadata from PDF documents (invoices, journals, settlements)",
-      "Processes up to 3 pages per document with batch processing capability",
-      "Automated email notifications with Excel export functionality",
-      "Integration with existing document management system",
+      "Mistral AI for PDF text extraction via Azure AI Foundry",
+      "Kimi K2.5 for structured JSON reasoning from extracted content",
+      "Automatic OpenAI fallback routing when primary models unavailable",
+      "WCF service integration for enterprise workflow consumption",
     ],
-    tech: ["ASP.NET MVC", "C#", "OpenAI Vision API", "SQL Server", "Windows Task Scheduler"],
+    tech: ["C#", "WCF", "Azure AI Foundry", "Mistral AI", "OpenAI API"],
     gradient: "from-purple-500 to-pink-500",
-    // NO github URL - enterprise/private project
   },
   {
     id: "sso-authentication",
@@ -61,19 +59,18 @@ const projects: Project[] = [
     // NO github URL - enterprise/private project
   },
   {
-    id: "dual-ocr",
-    title: "Dual OCR Validation Systems",
+    id: "copilot-cli-api",
+    title: "GitHub Copilot CLI API",
     description:
-      "Custom computer vision models for KTP extraction and invoice processing",
+      ".NET 8 REST API wrapping GitHub Copilot SDK with streaming, OCR, and vision capabilities",
     features: [
-      "Python computer vision model for Indonesian ID card (KTP) data extraction",
-      "PDP (Personal Data Protection) compliance implementation",
-      "OpenAI API integration for invoice processing automation",
-      "Reduced manual data entry errors by 85%",
+      "SSE streaming chat completions with OpenAI-compatible endpoints",
+      "Batch parallel OCR processing for document extraction",
+      "Vision/image analysis capabilities",
+      "Model listing and capability queries",
     ],
-    tech: ["Python", "OpenCV", "OpenAI API", "Computer Vision", "OCR"],
+    tech: [".NET 8", "C#", "GitHub Copilot SDK", "REST API", "OpenAI"],
     gradient: "from-orange-500 to-red-500",
-    // NO github URL - enterprise/private project
   },
   {
     id: "naper",

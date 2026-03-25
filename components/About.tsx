@@ -8,13 +8,13 @@ const stats = [
   {
     icon: Briefcase,
     label: "Years Experience",
-    value: "1+",
+    value: "2+",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: FileText,
     label: "IEEE Publications",
-    value: "6",
+    value: "7",
     color: "from-purple-500 to-pink-500",
   },
   {
@@ -25,8 +25,8 @@ const stats = [
   },
   {
     icon: Award,
-    label: "Projects Completed",
-    value: "15+",
+    label: "Enterprise Apps",
+    value: "38+",
     color: "from-orange-500 to-red-500",
   },
 ];
@@ -100,13 +100,13 @@ export default function About() {
               Professional Journey
             </h3>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Software Developer at <span className="font-semibold text-primary">MedcoEnergi E&P Indonesia</span> with 1+ years of enterprise application development experience, specializing in system modernization and digital transformation within the oil & gas industry.
+              Senior Software Developer at <span className="font-semibold text-primary">MedcoEnergi E&P Indonesia</span> with 2+ years of enterprise application development experience, specializing in AI integration and digital transformation within the oil & gas industry.
             </p>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              My expertise encompasses comprehensive authentication systems, AI-powered OCR solutions, legacy system migration, and standardized development frameworks using <span className="font-semibold">ASP.NET Core</span>, <span className="font-semibold">C#</span>, <span className="font-semibold">Python</span>, and enterprise integration platforms.
+              I build AI-powered document intelligence pipelines using <span className="font-semibold">Azure AI Foundry</span> (Mistral AI, Kimi K2.5), architect organization-wide <span className="font-semibold">.NET 8</span> project templates with EF Core 9, and design REST APIs with streaming capabilities — managing 38+ enterprise applications across the organization.
             </p>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              I consistently deliver innovative solutions including single sign-on authentication systems with multi-factor authentication, computer vision-based document processing, and automated testing frameworks that enhance business processes and operational efficiency.
+              My work spans from building shared configuration and MVC infrastructure libraries to implementing multi-stage <span className="font-semibold">Azure DevOps CI/CD pipelines</span> with SonarQube analysis, Docker builds, and Trivy security scanning.
             </p>
           </motion.div>
 
@@ -124,19 +124,19 @@ export default function About() {
               Computer Science graduate from <span className="font-semibold">Telkom University</span> with a stellar <span className="font-semibold text-accent">GPA of 3.94/4.0</span>, demonstrating strong academic foundation and dedication to excellence.
             </p>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Research contributions to Deep Neural Networks optimization for edge computing, achieving <span className="font-semibold text-secondary">36.5% faster inference</span> while maintaining <span className="font-semibold text-secondary">5.6% higher accuracy</span>. Published <span className="font-semibold">6 IEEE-indexed research papers</span> advancing efficient DNN optimization.
+              Research contributions to Deep Neural Networks optimization for edge computing, achieving <span className="font-semibold text-secondary">36.5% faster inference</span> while maintaining <span className="font-semibold text-secondary">5.6% higher accuracy</span>. Published <span className="font-semibold">7 IEEE-indexed research papers</span> advancing efficient DNN optimization.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
               {[
                 "ASP.NET Core",
                 "C#",
+                ".NET 8",
+                "Azure AI Foundry",
                 "Python",
-                "AI/ML",
-                "PyTorch",
-                "Azure",
+                "EF Core",
                 "Docker",
-                "React",
+                "Azure DevOps",
               ].map((tech, index) => (
                 <motion.span
                   key={tech}

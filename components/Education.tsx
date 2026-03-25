@@ -14,7 +14,7 @@ const education = [
     highlights: [
       "Graduated with Cum Laude honors",
       "Research focus on Deep Neural Networks and AI/ML",
-      "6 IEEE-indexed publications",
+      "7 IEEE-indexed publications",
       "Top 4 Best Paper Award at ICoDSA 2024",
     ],
     color: "from-blue-500 to-cyan-500",

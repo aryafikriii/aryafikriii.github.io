@@ -10,18 +10,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Arya Fikriansyah | Software Developer & AI/ML Engineer",
+  title: "Arya Fikriansyah | Senior Software Developer & AI Engineer",
   description:
-    "Software Developer at MedcoEnergi E&P Indonesia with expertise in ASP.NET Core, C#, Python, and AI/ML. Specializing in enterprise applications and system modernization.",
+    "Senior Software Developer at MedcoEnergi E&P Indonesia building AI-powered enterprise solutions with Azure AI Foundry, .NET 8, and Python. 7 IEEE publications in DNN optimization.",
   keywords: [
-    "Software Developer",
-    "AI/ML Engineer",
+    "Senior Software Developer",
+    "AI Engineer",
     "ASP.NET Core",
+    ".NET 8",
     "C#",
     "Python",
-    "Next.js",
-    "TypeScript",
-    "React",
+    "Azure AI Foundry",
+    "Entity Framework Core",
+    "Docker",
+    "Azure DevOps",
     "Machine Learning",
     "Deep Learning",
   ],
@@ -35,16 +37,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://aryafikriii.github.io",
-    title: "Arya Fikriansyah | Software Developer & AI/ML Engineer",
+    title: "Arya Fikriansyah | Senior Software Developer & AI Engineer",
     description:
-      "Software Developer at MedcoEnergi E&P Indonesia with expertise in ASP.NET Core, C#, Python, and AI/ML.",
+      "Senior Software Developer at MedcoEnergi E&P Indonesia building AI-powered enterprise solutions with Azure AI Foundry, .NET 8, and Python.",
     siteName: "Arya Fikriansyah Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arya Fikriansyah | Software Developer & AI/ML Engineer",
+    title: "Arya Fikriansyah | Senior Software Developer & AI Engineer",
     description:
-      "Software Developer at MedcoEnergi E&P Indonesia with expertise in ASP.NET Core, C#, Python, and AI/ML.",
+      "Senior Software Developer at MedcoEnergi E&P Indonesia building AI-powered enterprise solutions with Azure AI Foundry, .NET 8, and Python.",
   },
   robots: {
     index: true,

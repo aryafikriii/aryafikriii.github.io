@@ -16,19 +16,33 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Software Developer",
+    title: "Senior Software Developer",
     company: "Medco E&P Indonesia",
     location: "South Jakarta, Indonesia",
-    period: "June 2024 - Present",
+    period: "January 2025 - Present",
     current: true,
+    achievements: [
+      "Architected organization-wide .NET 8 project template (BPM Template 2026) with EF Core 9, Telerik/Kendo UI, and multi-provider SSO authentication, adopted by entire dev team",
+      "Built hybrid document intelligence pipeline using Azure AI Foundry: Mistral AI for PDF extraction + Kimi K2.5 for structured JSON reasoning, with automatic OpenAI fallback routing",
+      "Developed .NET 8 REST API wrapping GitHub Copilot SDK with SSE streaming chat completions, batch parallel OCR processing, and vision capabilities",
+      "Built shared configuration library bridging legacy .NET 4.8 with modern .NET 8 dependency injection, and reusable MVC infrastructure library used across all BPM4 applications",
+      "Implemented multi-stage Azure DevOps CI/CD pipelines with SonarQube static analysis, Docker image builds, and Trivy security scanning",
+    ],
+    tech: ["C#", ".NET 8", "Azure AI Foundry", "EF Core", "Docker", "Azure DevOps", "CoreWCF", "K2"],
+  },
+  {
+    title: "Junior Software Developer",
+    company: "Medco E&P Indonesia",
+    location: "South Jakarta, Indonesia",
+    period: "June 2024 - January 2025",
+    current: false,
     achievements: [
       "Designed and implemented comprehensive SSO authentication system integrating LDAP, Azure AD OAuth 2.0, and Google Authenticator with conditional multi-factor authentication flows",
       "Built dual OCR validation systems: custom Python computer vision model for KTP data extraction (PDP compliance) and OpenAI API-integrated invoice processing system",
-      "Successfully led migration of 15+ legacy ASP.NET WebForms VB applications to modern ASP.NET MVC 4.8 C# architecture with performance optimization",
-      "Developed standardized enterprise project templates (ASP.NET MVC, WCF Services, Console Applications)",
-      "Created comprehensive automated testing framework using Selenium with continuous integration practices",
+      "Led migration of 15+ legacy ASP.NET WebForms VB applications to modern ASP.NET MVC 4.8 C# architecture with performance optimization",
+      "Developed standardized enterprise project templates (ASP.NET MVC, WCF Services, Console Applications) and comprehensive Selenium testing framework",
     ],
-    tech: ["C#", "ASP.NET MVC", "WCF", "Azure AD", "LDAP", "Python", "OpenAI API", "SQL Server", "Docker", "Selenium"],
+    tech: ["C#", "ASP.NET MVC", "WCF", "Azure AD", "LDAP", "Python", "OpenAI API", "SQL Server", "Selenium"],
   },
   {
     title: "Research Assistant",
@@ -38,8 +52,8 @@ const experiences: ExperienceItem[] = [
     current: false,
     achievements: [
       "Co-developed NAPER (Neural Architecture Performance Enhancement in Resource-constrained environments), achieving 36.5% faster inference with 5.6% higher accuracy",
-      "Contributed to 6 IEEE-indexed research papers advancing efficient DNN optimization for edge computing",
-      "Delivered 2 presentations at international conferences sharing findings with global research community",
+      "Contributed to 7 IEEE-indexed research papers advancing efficient DNN optimization for edge computing",
+      "Delivered 3 presentations at international conferences sharing findings with global research community",
       "Implemented methodologies for bit flip attack analysis in DNNs with fault protection mechanisms",
     ],
     tech: ["Python", "PyTorch", "TensorFlow", "CUDA", "Edge Computing"],

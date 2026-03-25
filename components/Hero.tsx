@@ -6,8 +6,8 @@ import { Github, Linkedin, Mail, ChevronDown, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const roles = [
-  "Software Developer",
-  "AI/ML Engineer",
+  "Senior Software Developer",
+  "AI Engineer",
   "Research Contributor",
 ];
 
@@ -48,10 +48,10 @@ export default function Hero() {
   // Pre-calculate tech badge positions to avoid hydration mismatch
   const techBadges = React.useMemo(() => [
     { name: "C#", top: "0%", left: "50%" },
-    { name: ".NET", top: "25%", left: "93.3%" },
+    { name: ".NET 8", top: "25%", left: "93.3%" },
     { name: "Python", top: "75%", left: "93.3%" },
     { name: "AI/ML", top: "100%", left: "50%" },
-    { name: "React", top: "75%", left: "6.7%" },
+    { name: "EF Core", top: "75%", left: "6.7%" },
     { name: "Azure", top: "25%", left: "6.7%" },
   ], []);
 
@@ -201,7 +201,7 @@ export default function Hero() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              Software Developer at <span className="font-semibold text-primary">MedcoEnergi E&P Indonesia</span> with 1+ years of experience specializing in enterprise application development, AI/ML integration, and system modernization using ASP.NET Core, C#, and Python.
+              Senior Software Developer at <span className="font-semibold text-primary">MedcoEnergi E&P Indonesia</span> with 2+ years of experience building AI-powered enterprise solutions, architecting .NET 8 frameworks, and designing document intelligence pipelines using Azure AI Foundry, C#, and Python.
             </motion.p>
 
             {/* CTA Buttons */}
